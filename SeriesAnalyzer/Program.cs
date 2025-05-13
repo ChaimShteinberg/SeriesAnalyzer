@@ -11,16 +11,29 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             List<int> series = new List<int>();
-            // קריאה לפונקציה שמקבלת סדרת מספרים
+            series = GetSeries(series); // קריאה לפונקציה שמקבלת סדרת מספרים
             // קריאה לפונקציה שבודקת אם הסדרה חוקית
             // אם הסדר חוקית, קריאה לפונקציה שמציגה תפריט
         }
 
         static List<int> GetSeries(List<int> series)
         {
-            // קבלה מהמשתמש סדרת מספרים
-            // המרת הסדרה למערך של מספרים
-            // החזרת הסדרה
+            Console.Write("Enter a series of numbers: ");
+            string[] strSeries = Console.ReadLine().Split(' '); // קבלה מהמשתמש סדרת מספרים
+            try
+            {
+                foreach (string num in strSeries) // המרת הסדרה למערך של מספרים
+                {
+                    series.Add(int.Parse(num));
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Only numbers must be entered.");
+                series.Clear();
+                GetSeries(series);
+            }
+            return series; // החזרת הסדרה
         }
 
         static bool CheckerSeries(List<int> series)
