@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SeriesAnalyzer
 {
@@ -11,8 +12,12 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             List<int> series = new List<int>();
-            series = GetSeries(series); // קריאה לפונקציה שמקבלת סדרת מספרים
-            // קריאה לפונקציה שבודקת אם הסדרה חוקית
+            bool test = false;
+            while (!test)
+            {
+                series = GetSeries(series); // קריאה לפונקציה שמקבלת סדרת מספרים
+                test = CheckerSeries(series); // קריאה לפונקציה שבודקת אם הסדרה חוקית
+            }
             // אם הסדר חוקית, קריאה לפונקציה שמציגה תפריט
         }
 
@@ -38,8 +43,12 @@ namespace SeriesAnalyzer
 
         static bool CheckerSeries(List<int> series)
         {
-            // בדיקה אם הסדרה חוקית
-            // החזרת true אם הסדרה חוקית, אחרת false
+            if (series.Count < 3) // בדיקה אם הסדרה מכילה לפחות 3 מספרים
+            {
+                Console.WriteLine("The series must contain at least 3 numbers.");
+                return false; // החזרת true אם הסדרה חוקית, אחרת false
+            }
+            return true;
         }
 
         static void Menu(List<int> series)
