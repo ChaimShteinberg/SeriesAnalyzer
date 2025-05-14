@@ -94,7 +94,8 @@ namespace SeriesAnalyzer
                     Console.WriteLine(MinSeries(series)); // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
                     break;
                 case "g":
-                    // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
+                    Console.WriteLine(AverageSeries(series)); // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
+                    break;
                 case "h":
                 // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
                 case "i":
@@ -105,7 +106,6 @@ namespace SeriesAnalyzer
                     // הודעה על קלט לא חוקי
             }
         }
-
 
         static void PrintSeries(List<int> mySeries)
             {
@@ -161,8 +161,13 @@ namespace SeriesAnalyzer
 
         static int AverageSeries(List<int> series)
         {
-            // חישוב ממוצע הסדרה
-            // החזרת ממוצע הסדרה
+            int sum = 0;
+            foreach (int num in series)
+            {
+                sum += num;
+            }
+            int average = sum / series.Count; // חישוב ממוצע הסדרה
+            return average; // החזרת ממוצע הסדרה
         }
 
         static int LenghtSeries(List<int> series)
