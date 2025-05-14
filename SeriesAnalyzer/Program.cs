@@ -100,7 +100,8 @@ namespace SeriesAnalyzer
                     Console.WriteLine(LenghtSeries(series)); // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
                     break;
                 case "i":
-                // קריאה לפונקציה שמחזירה את סכום הסדרה ולהדפיס אותה
+                    Console.WriteLine(SumSeries(series)); // קריאה לפונקציה שמחזירה את סכום הסדרה ולהדפיס אותה
+                    break;
                 case "j":
                     // יציאה מהתוכנית
                 default:
@@ -162,11 +163,7 @@ namespace SeriesAnalyzer
 
         static int AverageSeries(List<int> series)
         {
-            int sum = 0;
-            foreach (int num in series)
-            {
-                sum += num;
-            }
+            int sum = SumSeries(series);
             int average = sum / series.Count; // חישוב ממוצע הסדרה
             return average; // החזרת ממוצע הסדרה
         }
@@ -178,8 +175,13 @@ namespace SeriesAnalyzer
 
         static int SumSeries(List<int> series)
         {
-            // חישוב סכום הסדרה
-            // החזרת סכום הסדרה
+
+            int sum = 0;
+            foreach (int num in series)
+            {
+                sum += num; // חישוב סכום הסדרה
+            }
+            return sum; // החזרת סכום הסדרה
         }
     }
 }
