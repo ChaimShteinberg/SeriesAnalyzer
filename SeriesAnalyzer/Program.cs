@@ -88,7 +88,8 @@ namespace SeriesAnalyzer
                     PrintSeries(sorted); // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
                     break;
                 case "e":
-                    // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
+                    Console.WriteLine(MaxSeries(series)); // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
+                    break;
                 case "f":
                     // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
                 case "g":
@@ -131,10 +132,17 @@ namespace SeriesAnalyzer
             return sorted; // החזרת הסדרה הממוינת
         }
 
-        static int MaxValue(List<int> series)
+        static int MaxSeries(List<int> series)
         {
-            // חיפוש הערך המקסימלי בסדרה
-            // החזרת הערך המקסימלי בסדרה
+            int max = series[0];
+            foreach (int num in series)
+            {
+                if (num > max) // חיפוש הערך המקסימלי בסדרה
+                {
+                    max = num;
+                }
+            }
+            return max; // החזרת הערך המקסימלי בסדרה
         }
 
         static int MinSeries(List<int> series)
