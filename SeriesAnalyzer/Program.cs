@@ -77,7 +77,8 @@ namespace SeriesAnalyzer
                 case "a":
                     return true; // חזרה לקבלת סדרה חדשה
                 case "b":
-                    // קריאה לפונקציה שמדפיסה את הסדרה
+                    PrintSeries(series);
+                    break; // קריאה לפונקציה שמדפיסה את הסדרה
                 case "c":
                 // קריאה לפונקציה שהופכת את הסדרה
                 // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
@@ -99,53 +100,58 @@ namespace SeriesAnalyzer
                 default:
                     // הודעה על קלט לא חוקי
             }
+        }
 
-            static void PrintSeries(List<int> mySeries)
+
+        static void PrintSeries(List<int> mySeries)
             {
-                // הדפסת הסדרה
+                foreach (int num in mySeries)
+                {
+                    Console.Write(num); // הדפסת הסדרה
+                }
+                
             }
 
-            static List<int> ReverseSeries(List<int> series)
-            {
-                // הפיכת הסדרה
-                // החזרת הסדרה ההפוכה
-            }
+        static List<int> ReverseSeries(List<int> series)
+        {
+            // הפיכת הסדרה
+            // החזרת הסדרה ההפוכה
+        }
 
-            static List<int> SortSeries(List<int> series)
-            {
-                // מיון הסדרה
-                // החזרת הסדרה הממוינת
-            }
+        static List<int> SortSeries(List<int> series)
+        {
+            // מיון הסדרה
+            // החזרת הסדרה הממוינת
+        }
 
-            static int MaxValue(List<int> series)
-            {
-                // חיפוש הערך המקסימלי בסדרה
-                // החזרת הערך המקסימלי בסדרה
-            }
+        static int MaxValue(List<int> series)
+        {
+            // חיפוש הערך המקסימלי בסדרה
+            // החזרת הערך המקסימלי בסדרה
+        }
 
-            static int MinSeries(List<int> series)
-            {
-                // חיפוש הערך המינימלי בסדרה
-                // החזרת הערך המינימלי בסדרה
-            }
+        static int MinSeries(List<int> series)
+        {
+            // חיפוש הערך המינימלי בסדרה
+            // החזרת הערך המינימלי בסדרה
+        }
 
-            static int AverageSeries(List<int> series)
-            {
-                // חישוב ממוצע הסדרה
-                // החזרת ממוצע הסדרה
-            }
+        static int AverageSeries(List<int> series)
+        {
+            // חישוב ממוצע הסדרה
+            // החזרת ממוצע הסדרה
+        }
 
-            static int LenghtSeries(List<int> series)
-            {
-                // חישוב מספר האיברים בסדרה
-                // החזרת מספר האיברים בסדרה
-            }
+        static int LenghtSeries(List<int> series)
+        {
+            // חישוב מספר האיברים בסדרה
+            // החזרת מספר האיברים בסדרה
+        }
 
-            static int SumSeries(List<int> series)
-            {
-                // חישוב סכום הסדרה
-                // החזרת סכום הסדרה
-            }
+        static int SumSeries(List<int> series)
+        {
+            // חישוב סכום הסדרה
+            // החזרת סכום הסדרה
         }
     }
 }
