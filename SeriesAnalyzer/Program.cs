@@ -57,55 +57,59 @@ namespace SeriesAnalyzer
 
         static bool Menu(List<int> series)
         {
-            Console.WriteLine("menu"); // הצגת תפריט למשתמש
-            Console.WriteLine("a. Input a Series");
-            Console.WriteLine("b. Display the series in the order it was entered");
-            Console.WriteLine("c. Display the series in the reversed order it was entered");
-            Console.WriteLine("d. Display the series in sorted order");
-            Console.WriteLine("e. Display the Max value of the series");
-            Console.WriteLine("f. Display the Min value of the series");
-            Console.WriteLine("g. Display the Average of the series");
-            Console.WriteLine("h. Display the Number of elements in the series");
-            Console.WriteLine("i. Display the Sum of the series");
-            Console.WriteLine("j. Exit");
-            Console.Write("Enter a value from A to J: ");
-
-            string userInput = Console.ReadLine(); // קבלת input מהמשתמש
-
-            switch (userInput)
+            while (true)
             {
-                case "a":
-                    return true; // חזרה לקבלת סדרה חדשה
-                case "b":
-                    PrintSeries(series);
-                    break; // קריאה לפונקציה שמדפיסה את הסדרה
-                case "c":
-                    List<int> reverse = ReverseSeries(series); // קריאה לפונקציה שהופכת את הסדרה
-                    PrintSeries(reverse); // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
-                    break;
-                case "d":
-                    List<int> sorted = SortSeries(series); // קריאה לפונקציה שממיינת את הסדרה
-                    PrintSeries(sorted); // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
-                    break;
-                case "e":
-                    Console.WriteLine(MaxSeries(series)); // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
-                    break;
-                case "f":
-                    Console.WriteLine(MinSeries(series)); // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
-                    break;
-                case "g":
-                    Console.WriteLine(AverageSeries(series)); // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
-                    break;
-                case "h":
-                    Console.WriteLine(LenghtSeries(series)); // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
-                    break;
-                case "i":
-                    Console.WriteLine(SumSeries(series)); // קריאה לפונקציה שמחזירה את סכום הסדרה ולהדפיס אותה
-                    break;
-                case "j":
-                    // יציאה מהתוכנית
-                default:
-                    // הודעה על קלט לא חוקי
+                Console.WriteLine("menu"); // הצגת תפריט למשתמש
+                Console.WriteLine("a. Input a Series");
+                Console.WriteLine("b. Display the series in the order it was entered");
+                Console.WriteLine("c. Display the series in the reversed order it was entered");
+                Console.WriteLine("d. Display the series in sorted order");
+                Console.WriteLine("e. Display the Max value of the series");
+                Console.WriteLine("f. Display the Min value of the series");
+                Console.WriteLine("g. Display the Average of the series");
+                Console.WriteLine("h. Display the Number of elements in the series");
+                Console.WriteLine("i. Display the Sum of the series");
+                Console.WriteLine("j. Exit");
+                Console.Write("Enter a value from A to J: ");
+
+                string userInput = Console.ReadLine(); // קבלת input מהמשתמש
+
+                switch (userInput)
+                {
+                    case "a":
+                        return true; // חזרה לקבלת סדרה חדשה
+                    case "b":
+                        PrintSeries(series);
+                        break; // קריאה לפונקציה שמדפיסה את הסדרה
+                    case "c":
+                        List<int> reverse = ReverseSeries(series); // קריאה לפונקציה שהופכת את הסדרה
+                        PrintSeries(reverse); // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
+                        break;
+                    case "d":
+                        List<int> sorted = SortSeries(series); // קריאה לפונקציה שממיינת את הסדרה
+                        PrintSeries(sorted); // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
+                        break;
+                    case "e":
+                        Console.WriteLine(MaxSeries(series)); // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
+                        break;
+                    case "f":
+                        Console.WriteLine(MinSeries(series)); // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
+                        break;
+                    case "g":
+                        Console.WriteLine(AverageSeries(series)); // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
+                        break;
+                    case "h":
+                        Console.WriteLine(LenghtSeries(series)); // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
+                        break;
+                    case "i":
+                        Console.WriteLine(SumSeries(series)); // קריאה לפונקציה שמחזירה את סכום הסדרה ולהדפיס אותה
+                        break;
+                    case "j":
+                        return false;// יציאה מהתוכנית
+                    default:
+                        Console.WriteLine("Invalid input, please try again"); // הודעה על קלט לא חוקי
+                        break;
+                }
             }
         }
 
