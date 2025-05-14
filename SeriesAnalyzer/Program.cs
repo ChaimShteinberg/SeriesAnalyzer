@@ -53,10 +53,22 @@ namespace SeriesAnalyzer
 
         static void Menu(List<int> series)
         {
-            // הצגת תפריט למשתמש
-            // קבלת input מהמשתמש
+            Console.WriteLine("menu"); // הצגת תפריט למשתמש
+            Console.WriteLine("a. Input a Series");
+            Console.WriteLine("b. Display the series in the order it was entered");
+            Console.WriteLine("c. Display the series in the reversed order it was entered");
+            Console.WriteLine("d. Display the series in sorted order");
+            Console.WriteLine("e. Display the Max value of the series");
+            Console.WriteLine("f. Display the Min value of the series");
+            Console.WriteLine("g. Display the Average of the series");
+            Console.WriteLine("h. Display the Number of elements in the series");
+            Console.WriteLine("i. Display the Sum of the series");
+            Console.WriteLine("j. Exit");
+            Console.Write("Enter a value from A to J: ");
 
-            switch (input)
+            string userInput = Console.ReadLine(); // קבלת input מהמשתמש
+
+            switch (userInput)
             {
                 case "a":
                     // חזרה לקבלת סדרה חדשה
