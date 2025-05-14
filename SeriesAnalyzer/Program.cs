@@ -91,7 +91,8 @@ namespace SeriesAnalyzer
                     Console.WriteLine(MaxSeries(series)); // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
                     break;
                 case "f":
-                    // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
+                    Console.WriteLine(MinSeries(series)); // קריאה לפונקציה שמחזירה את הערך המינימלי ולהדפיס אותה
+                    break;
                 case "g":
                     // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
                 case "h":
@@ -147,8 +148,15 @@ namespace SeriesAnalyzer
 
         static int MinSeries(List<int> series)
         {
-            // חיפוש הערך המינימלי בסדרה
-            // החזרת הערך המינימלי בסדרה
+            int min = series[0];
+            foreach (int num in series)
+            {
+                if (num < min) // חיפוש הערך המינימלי בסדרה
+                {
+                    min = num;
+                }
+            }
+            return min; // החזרת הערך המינימלי בסדרה
         }
 
         static int AverageSeries(List<int> series)
