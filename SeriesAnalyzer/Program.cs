@@ -12,13 +12,17 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             List<int> series = new List<int>();
-            bool test = false;
-            while (!test)
+            bool loop = true;
+            while (loop)
             {
-                series = GetSeries(series); // קריאה לפונקציה שמקבלת סדרת מספרים
-                test = CheckerSeries(series); // קריאה לפונקציה שבודקת אם הסדרה חוקית
+                bool test = false;
+                while (!test)
+                {
+                    series = GetSeries(series); // קריאה לפונקציה שמקבלת סדרת מספרים
+                    test = CheckerSeries(series); // קריאה לפונקציה שבודקת אם הסדרה חוקית
+                }
+                loop = Menu(series); // אם הסדר חוקית, קריאה לפונקציה שמציגה תפריט
             }
-            // אם הסדר חוקית, קריאה לפונקציה שמציגה תפריט
         }
 
         static List<int> GetSeries(List<int> series)
@@ -51,7 +55,7 @@ namespace SeriesAnalyzer
             return true;
         }
 
-        static void Menu(List<int> series)
+        static bool Menu(List<int> series)
         {
             Console.WriteLine("menu"); // הצגת תפריט למשתמש
             Console.WriteLine("a. Input a Series");
@@ -71,7 +75,7 @@ namespace SeriesAnalyzer
             switch (userInput)
             {
                 case "a":
-                    // חזרה לקבלת סדרה חדשה
+                    return true; // חזרה לקבלת סדרה חדשה
                 case "b":
                     // קריאה לפונקציה שמדפיסה את הסדרה
                 case "c":
