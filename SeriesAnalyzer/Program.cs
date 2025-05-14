@@ -80,8 +80,8 @@ namespace SeriesAnalyzer
                     PrintSeries(series);
                     break; // קריאה לפונקציה שמדפיסה את הסדרה
                 case "c":
-                // קריאה לפונקציה שהופכת את הסדרה
-                // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
+                    List<int> reverse = ReverseSeries(series); // קריאה לפונקציה שהופכת את הסדרה
+                    PrintSeries(reverse); // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
                 case "d":
                     // קריאה לפונקציה שממיינת את הסדרה
                     // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
@@ -114,8 +114,12 @@ namespace SeriesAnalyzer
 
         static List<int> ReverseSeries(List<int> series)
         {
-            // הפיכת הסדרה
-            // החזרת הסדרה ההפוכה
+            List<int> reverse = new List<int>();
+            for (int i = series.Count - 1; i >= 0; i--) // הפיכת הסדרה
+            {
+                reverse.Add(series[i]);
+            }
+            return reverse; // החזרת הסדרה ההפוכה
         }
 
         static List<int> SortSeries(List<int> series)
