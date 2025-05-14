@@ -97,7 +97,8 @@ namespace SeriesAnalyzer
                     Console.WriteLine(AverageSeries(series)); // קריאה לפונקציה שמחזירה את ממוצע הסדרה ולהדפיס אותה
                     break;
                 case "h":
-                // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
+                    Console.WriteLine(LenghtSeries(series)); // קריאה לפונקציה שמחזירה את מספר האיברים בסדרה ולהדפיס אותה
+                    break;
                 case "i":
                 // קריאה לפונקציה שמחזירה את סכום הסדרה ולהדפיס אותה
                 case "j":
@@ -172,8 +173,7 @@ namespace SeriesAnalyzer
 
         static int LenghtSeries(List<int> series)
         {
-            // חישוב מספר האיברים בסדרה
-            // החזרת מספר האיברים בסדרה
+            return series.Count; // חישוב מספר האיברים בסדרה והחזרתו
         }
 
         static int SumSeries(List<int> series)
