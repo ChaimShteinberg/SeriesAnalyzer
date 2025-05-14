@@ -82,9 +82,11 @@ namespace SeriesAnalyzer
                 case "c":
                     List<int> reverse = ReverseSeries(series); // קריאה לפונקציה שהופכת את הסדרה
                     PrintSeries(reverse); // קריאה לפונקציה שמדפיסה את הסדרה ההפוכה
+                    break;
                 case "d":
-                    // קריאה לפונקציה שממיינת את הסדרה
-                    // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
+                    List<int> sorted = SortSeries(series); // קריאה לפונקציה שממיינת את הסדרה
+                    PrintSeries(sorted); // קריאה לפונקציה שמדפיסה את הסדרה הממוינת
+                    break;
                 case "e":
                     // קריאה לפונקציה שמחזירה את הערך המקסימלי ולהדפיס אותה
                 case "f":
@@ -124,8 +126,9 @@ namespace SeriesAnalyzer
 
         static List<int> SortSeries(List<int> series)
         {
-            // מיון הסדרה
-            // החזרת הסדרה הממוינת
+            List<int> sorted = new List<int>(series);
+            sorted.Sort(); // מיון הסדרה
+            return sorted; // החזרת הסדרה הממוינת
         }
 
         static int MaxValue(List<int> series)
